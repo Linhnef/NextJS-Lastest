@@ -116,3 +116,20 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 10px;
+  border-radius: 20px;
+}
+/* 
+::-webkit-scrollbar-thumb:hover {
+  background: #e0e0e080;
+} */

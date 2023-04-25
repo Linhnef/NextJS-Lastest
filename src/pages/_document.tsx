@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
@@ -12,6 +13,22 @@ export default function Document() {
           crossOrigin='anonymous'
         />
       </Head>
+      <script
+        async
+        src='https://www.googletagmanager.com/gtag/js?id=G-9LHQF8WF12'
+      ></script>
+      <script
+        // strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || []; 
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date()); 
+
+          gtag('config', 'G-9LHQF8WF12');
+      `,
+        }}
+      />
       <body>
         <Main />
         <NextScript />
