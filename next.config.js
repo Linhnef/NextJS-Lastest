@@ -1,11 +1,31 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer({
   eslint: {
     dirs: ['src'],
   },
-
+  compiler: {
+    styledComponents: true,
+  },
+  output: 'standalone',
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**',
+      },
+    ],
+  },
 
   // Uncoment to add domain whitelist
   // images: {
@@ -32,6 +52,4 @@ const nextConfig = {
 
     return config;
   },
-};
-
-module.exports = nextConfig;
+});
