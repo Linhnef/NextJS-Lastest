@@ -14,6 +14,7 @@
     -- Remove all warning in console, maybe have some warning in console.
     ...
 3. folder structure
+.
 ├── public
 ├── src
 │   ├── components
