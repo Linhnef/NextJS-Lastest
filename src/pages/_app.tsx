@@ -19,12 +19,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className='container !h-full !w-full'>
         <Component {...pageProps} />
       </div>
-      <footer className='bottom-2 text-gray-700'>
-        © {new Date().getFullYear()} By{' '}
-        <UnderlineLink href='https://github.com/ponny-io'>
-          Ponny NextJS Template
-        </UnderlineLink>
-      </footer>
     </>
   );
 }
